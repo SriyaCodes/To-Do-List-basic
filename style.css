@@ -1,69 +1,123 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+body {
     margin: 0;
     display: flex;
     justify-content: center;
-    background-color: #20639B;
+    background-color: #edabdd;
+    font-family: 'Quicksand', sans-serif;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
 }
 
-.form{
-    position: absolute;
-    top: 30%;
-    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+.form {
+    margin-top: 8%;
     width: 400px;
-    background-color:pink;
-    border-radius: 10px;
+    background: #e7568e;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: floatUp 1s ease-out;
 }
 
-.input{
+.input {
     width: 100%;
     box-sizing: border-box;
     padding: 20px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 16px 16px 0 0;
     border: none;
-    font-size: 20px;
-    font-family: cursive;
+    font-size: 18px;
+    font-family: 'Quicksand', cursive;
+    background-color: #6788bd;
+    color: #000000;
+    transition: background 0.3s ease;
 }
 
-.input::placeholder{
-    color: lightgray;
+.input:focus {
+    outline: none;
+    background-color: #d6537f;
 }
 
-.list{
+.input::placeholder {
+    color: #892424;
+}
+
+.list {
     padding: 0;
     margin: 0;
 }
 
-.list li{
+.list li {
     list-style-type: none;
-    padding: 20px;
-    font-family: cursive;
-    border-top:  5px solid ;
-    border-color: darkgray;
+    padding: 16px 20px;
+    font-family: 'Quicksand', cursive;
+    border-top: 2px solid #dcbfef;
     position: relative;
+    background-color: #fdf6fd;
+    transition: background 0.3s ease;
+    animation: fadeIn 0.4s ease;
 }
 
-.list li .fa-trash{
-    color: red;
+.list li:hover {
+    background-color: #c29ad3;
+}
+
+.list li .fa-trash {
+    color: #e67e88;
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
-.list li .fa-check-square{
-    color: black;
+
+.list li .fa-trash:hover {
+    transform: translateY(-50%) scale(1.2);
+}
+
+.list li .fa-check-square {
+    color: #8ecae6;
     position: absolute;
-    right: 40px;
+    right: 50px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.list li .fa-check-square:hover {
+    transform: translateY(-50%) scale(1.2);
 }
 
 .list li.checked {
-    color: black;
+    color: #aaa;
     text-decoration: line-through;
+    background-color: #f0f0f0;
 }
 
-.list li.checked .fa-check-square{
-    color: black;
+.list li.checked .fa-check-square {
+    color: #b2b2b2;
+}
+
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    padding: 20px;
+    animation: fadeIn 1s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
 }
